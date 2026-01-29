@@ -1,1 +1,1 @@
-TBD
+A collection of templates to make it easy to get started creating modualr, portable, and reusable PyAres services.
