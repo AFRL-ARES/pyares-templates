@@ -48,9 +48,9 @@ if __name__ == "__main__":
     local = True
 
     planner = AresPlannerService(your_planner_function,
-                                    name,
-                                    version,
-                                    description, 
+                                    service_name = name,
+                                    service_version = version,
+                                    service description = description, 
                                     use_localhost=local, 
                                     port=port)
     #Mark that the planner supports numbers
