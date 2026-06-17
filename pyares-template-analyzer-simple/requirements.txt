@@ -1,0 +1,2 @@
+PyAres
+numpy>=2.2.0

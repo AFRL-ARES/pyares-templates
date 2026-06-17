@@ -2,21 +2,22 @@
 requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-# Basic info about your module, Note that PyAres requires Python 3.10 or newer
+# Basic info about your module
 [project]
 name = "your module name "
 version = "x.x.x"
 authors = [{ name = "Your Name", email = "you@your_website.com" }]
 description = "A short descripton of your module"
 license = "License type"
+# NOTE: PyAres requires Python 3.10 or newer, but other your logic may have other version requirements
 requires-python = ">= 3.10"
 
 # Add the packages that your module requires. PyAres is a defualt requirement. 
-# Specific versions of packages can also be specified as needed
+# Specific versions of packages can also be specified as needed. 
+# NOTE: Numpy is included only as an example.
 dependencies = [
   "PyAres",
-  "numpy (>=2.2.0)"
-  
+  "numpy>=2.2.0", 
 ]
 
 # Links to project websites if relavant
