@@ -1,2 +1,2 @@
-PyAres
+PyAres>=1.0.0b1
 numpy>=2.2.0

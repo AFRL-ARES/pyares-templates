@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-from PyAres import Analysis, AnalysisRequest, Outcome
+from PyAres import AnalysisResponse, AnalysisRequest, Outcome
 
 # Necessary logic can be imported from modules installed in your python environment, other files/folders within the module 
 # or defined in the analyzer file as needed
@@ -19,7 +19,7 @@ def analysis_logic(a,b,c,multiply=True):
     else:
         return np.sqrt(subtract(add(a,b),divide(b,c)))
 
-def your_analyzer_function(request: AnalysisRequest) -> Analysis:
+def your_analyzer_function(request: AnalysisRequest) -> AnalysisResponse:
     # this function is what the analyzer service will call. It handles parsing between the ARES requests and the inputs and outputs of your analysis logic
     val_1 = request.inputs.get('Value 1')
     val_2 = request.inputs.get('Value 1')
@@ -31,8 +31,8 @@ def your_analyzer_function(request: AnalysisRequest) -> Analysis:
         outcome = Outcome.SUCCESS
     except Exception as e:
         print(f"Error during analysis: {e}")
-        return Analysis(result=0.0, outcome=Outcome.FAILURE)
-    return Analysis(result=result, outcome=Outcome.SUCCESS)
+        return AnalysisResponse(result=0.0, outcome=Outcome.FAILURE)
+    return AnalysisResponse(result=result, outcome=Outcome.SUCCESS)
 
 
 

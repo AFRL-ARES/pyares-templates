@@ -30,7 +30,7 @@ def plan(bounds,type='normal'):
         if type == 'normal':
             # If normal, standard devation is set such that the min/max are 3 standard deviations away from the mean
             val = np.inf
-            while val > max or val < min
+            while val > max or val < min:
                 val = np.random.normal((max-min)/2,(max-min)/6)
         
         elif type =='uniform':
@@ -62,12 +62,12 @@ def planner(request: PlanRequest) -> PlanResponse:
             '''
 
         new_values = plan(bounds,dist_type)
-
-        response = PlanResponse(parameter_names=parameter_names, parameter_values=new_values,planning_outcome=Outcome.SUCCESS)
-
+        
+        response = PlanResponse(parameter_names=parameter_names, parameter_values=new_values,outcome=Outcome.SUCCESS)
+        # NOTE: PyAres versions > 0.4.0 support assigning values using a dictionary structure, e.g., PlanResponse(parameter_data={param1_key:param1_value,...})
     except Exception as e:
         parameter_names = [p.name for p in request.parameters]
-        response = PlanResponse(parameter_names=parameter_names,parameter_values=[-1]*len(parameter_names),planning_outcome=Outcome.FAILURE)
+        response = PlanResponse(parameter_names=parameter_names,parameter_values=[-1]*len(parameter_names),outcome=Outcome.FAILURE)
     return response
 
 # -----------------------------------------------------------------------------
@@ -96,5 +96,12 @@ if __name__ == "__main__":
 
     # Note that setting names are case sensitive in this example
     planner_service.add_setting("Distribution", AresDataType.STRING,constraints=['normal','uniform'])
+    try:
+        planner_service.start()
+    except Exception as e:
+        print(f"An Exception Occured: {e}")
+    except KeyboardInterrupt:
+        print(f"\nShutting Down PyAres Service...")
+    finally: # Use the finally block for things like saving/closing any active data files, closing remote connections, etc.
+        pass
 
-    planner_service.start()

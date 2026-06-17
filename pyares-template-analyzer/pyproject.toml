@@ -4,11 +4,14 @@ build-backend = "setuptools.build_meta"
 
 # Basic info about your module
 [project]
-name = "your module name "
-version = "x.x.x"
+# update with your module name. This will typiclaly be the name of the module folder within the src directory
+name = "your_module"
+version = "0.0.1"
 authors = [{ name = "Your Name", email = "you@your_website.com" }]
 description = "A short descripton of your module"
-license = "License type"
+# update with your license type
+license = "MIT" 
+
 # NOTE: PyAres requires Python 3.10 or newer, but other your logic may have other version requirements
 requires-python = ">= 3.10"
 
@@ -16,7 +19,7 @@ requires-python = ">= 3.10"
 # Specific versions of packages can also be specified as needed. 
 # NOTE: Numpy is included only as an example.
 dependencies = [
-  "PyAres",
+  "PyAres>=1.0.0b1",
   "numpy>=2.2.0", 
 ]
 

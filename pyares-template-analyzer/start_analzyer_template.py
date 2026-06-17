@@ -10,7 +10,7 @@ defined within the package
 """
 
 from PyAres import AresAnalyzerService, AresDataType
-from your_module import your_analyer_function
+from your_module import your_analyzer_function
 
 if __name__ == "__main__":
     name = "<The name of your analyzer>"
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     port = 7356
     local = True
 
-    analyzer = AresAnalyzerService(your_analyer_function,
+    analyzer = AresAnalyzerService(your_analyzer_function,
                                     name,
                                     version,
                                     description, 
@@ -44,4 +44,11 @@ if __name__ == "__main__":
     
     analyzer.add_setting("Multiply", AresDataType.BOOLEAN)
 
-    analyzer.start()
+    try:
+        analyzer.start()
+    except Exception as e:
+        print(f"An Exception Occured: {e}")
+    except KeyboardInterrupt:
+        print(f"\nShutting Down PyAres Service...")
+    finally: # Use the finally block for things like saving/closing any active data files, closing remote connections, etc.
+        pass
