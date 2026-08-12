@@ -1,4 +1,4 @@
-# Pyares Simple Planner Template
+# PyAres Random With Exclusion Planner
 ## Introduction
 This is a template for a simple random with exclusion, single file [PyAres](https://github.com/AFRL-ARES/PyAres) planner service. This Planner is designed to generate random numbers outside of a calculated exclusion zone.
 
