@@ -1,6 +1,6 @@
 # Pyares Simple Planner Template
 ## Introduction
-This is a template for a a simple, single file [PyAres](https://github.com/AFRL-ARES/PyAres) planner service. This approach is best for getting started with PyAres or if your planning protocol is relatively simple and doesn't require a lot of custom logic that isn't already abstracted away by external libraries. 
+This is a template for a simple random with exclusion, single file [PyAres](https://github.com/AFRL-ARES/PyAres) planner service. This Planner is designed to generate random numbers outside of a calculated exclusion zone.
 
 ## Using this Template
 1. Clone this repository to your local machine.
