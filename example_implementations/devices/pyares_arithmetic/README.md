@@ -10,7 +10,8 @@ The included `arithmetic_device.py` provides an example of how a device can be u
 3. Calculation of required dilution flow rate given flow rates for flammables, inerts and a flammability threshold value
 4. Calculation of the required sampling time given an array of flow rates and desired sample amount.
 
-**N.B.** Output from devices often comes as scalar values within ARES. The custom commands within ARES OS can be used to create routines to combine multiple scalar values into an array for passing inputs to array-based functions.
+**N.B.** Output from devices often comes as scalar values within ARES. The custom commands within ARES OS can be used to create routines to combine multiple scalar values into an array for passing inputs to array-based functions. See the image below for an example.
+![Figure illustrating how to create a custom command with ARES OS to convert a collection of numbers into a number array](custom-command-number-to-array.png?raw=true "Numbers to NumberArray Custom Command")
 
 
 ### Using the Arithmetic Device
